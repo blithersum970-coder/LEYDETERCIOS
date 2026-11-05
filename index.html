@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ley de los Tercios | Composición Fotográfica</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:linear-gradient(135deg,#eef2ff,#f8f9ff);color:#111827;line-height:1.6}
+header{background:#781a1a;color:white;text-align:center;padding:58px 20px 48px}
+header h1{color:#dfdfdf;font-size:clamp(2rem,5vw,3.2rem);margin-bottom:10px}
+.subtitulo{color:#cbd5e1;font-size:clamp(1rem,2vw,1.25rem)}
+.menu-btn{position:fixed;top:18px;left:18px;background:#370d13;color:white;width:52px;height:52px;border:0;border-radius:14px;display:flex;justify-content:center;align-items:center;font-size:28px;cursor:pointer;z-index:1001;box-shadow:0 5px 15px #0003}
+.menu-hamburguesa{position:fixed;top:0;left:-270px;width:255px;height:100%;background:white;padding-top:90px;transition:.35s;z-index:1000;box-shadow:5px 0 15px #0002}
+.menu-hamburguesa.activo{left:0}
+.menu-hamburguesa a{display:block;padding:17px 24px;text-decoration:none;color:#333;font-size:18px;font-weight:bold;border-bottom:1px solid #eee}
+.menu-hamburguesa a:hover{background:#f1f1ff;color:#6c63ff}
+.contenedor{width:94%;max-width:1250px;margin:36px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+.card{background:white;border-radius:20px;padding:22px;border:3px solid #d7d7ff;box-shadow:0 5px 15px #00000010}
+.card h2,.seccion-titulo{background:#781a1a;color:white;padding:12px;border-radius:10px;text-align:center;margin-bottom:16px}
+.card p{margin:10px 0}
+.card ul{padding-left:22px;margin:10px 0}
+.formula{background:#ffffff;color:#4b42c4;padding:16px;border-radius:12px;text-align:center;font-size:20px;font-weight:bold;margin:16px 0}
+.seccion{width:94%;max-width:1050px;margin:42px auto}
+.seccion>h2{background:#781a1a;color:white;padding:13px;border-radius:12px;text-align:center;margin-bottom:20px}
+.paso{background:white;padding:22px;border-left:8px solid #781a1a;border-radius:12px;margin-bottom:18px;box-shadow:0 4px 12px #0000000c}
+.paso h3{color:#180101;margin-bottom:8px}
+.ejemplo{background:#111827;color:white;padding:20px;border-radius:15px;text-align:center;margin:18px 0}
+.ejemplo svg{width:100%;max-width:720px;border-radius:10px;display:block;margin:10px auto}
+.boton{display:inline-block;background:#2563eb;color:white;text-decoration:none;border:0;padding:13px 22px;border-radius:10px;cursor:pointer;font-weight:bold;transition:.2s}
+.boton:hover{background:#1d4ed8;transform:translateY(-2px)}
+.centrado{text-align:center}
+.nota{background:#fff7ed;border-left:6px solid #f59e0b;padding:16px;border-radius:10px;margin-top:15px}
+footer{background:#0f172a;color:#cbd5e1;text-align:center;padding:28px;margin-top:45px}
+@media(max-width:600px){header{padding-top:80px}.contenedor{width:92%}.seccion{width:92%}}
+</style>
+</head>
+<body>
+<button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+<nav id="menuHamburguesa" class="menu-hamburguesa">
+<a href="#inicio" onclick="toggleMenu()">Inicio</a>
+<a href="#que-es" onclick="toggleMenu()">¿Qué es?</a>
+<a href="#historia" onclick="toggleMenu()">Historia</a>
+<a href="#usos" onclick="toggleMenu()">Usos</a>
+<a href="#aplicacion" onclick="toggleMenu()">Cómo aplicarla</a>
+<a href="cuestionario-tercios.html">Cuestionario</a>
+</nav>
+<header id="inicio">
+<h1>LEY DE LOS TERCIOS</h1>
+<p class="subtitulo">Aprende a organizar los elementos de una imagen para crear composiciones equilibradas 📷</p>
+</header>
+
+<section class="contenedor" id="que-es">
+<article class="card">
+<h2>¿Qué es la ley de los tercios?</h2>
+<p>La ley de los tercios es una guía de composición visual que consiste en dividir una imagen en <b>nueve partes iguales</b>, trazando dos líneas horizontales y dos verticales.</p>
+<p>Las líneas crean cuatro puntos de intersección. Colocar el sujeto principal o elementos importantes cerca de esas líneas o puntos puede generar una composición más equilibrada y dinámica.</p>
+<div class="formula"> <img src="leydetercios_colibri.jfif" alt="" style="height: 300px;width: 300px;"></div>
+</article>
+<article class="card">
+<h2>¿Cómo se representa?</h2>
+<p>Imagina que colocas una cuadrícula sobre la fotografía. En lugar de situar siempre el objeto justo en el centro, puedes desplazarlo hacia uno de los tercios.</p>
+<p>Los puntos donde se cruzan las líneas se conocen como <b>puntos de interés</b> o puntos fuertes.</p>
+<div class="formula"><img src="leydeterciosflor.jfif" style="height: 300px;width: 300px;margin-top: 85px;" alt=""></div>
+</article>
+<article class="card">
+<h2>¿Es una regla obligatoria?</h2>
+<p>No. Es una herramienta para tomar decisiones de composición, no una fórmula que deba utilizarse en todas las fotografías.</p>
+<p>Una imagen centrada, simétrica o con una composición diferente también puede funcionar si responde a la intención visual.</p>
+<div class="formula"> <img src="leydetercios_pintura.jpg" alt="" style="height: 300px;width: 300px;margin-top: 105px;"></div>
+</article>
+</section>
+
+<section class="seccion" id="historia">
+<h2>Un poco de historia</h2>
+<div class="paso">
+<h3>1. Antecedentes en las artes visuales</h3>
+<p>La búsqueda del equilibrio y la distribución de los elementos existe desde mucho antes de la fotografía. Pintores y artistas estudiaban cómo organizar figuras, espacios y puntos de atención dentro de una obra.</p>
+</div>
+<div class="paso">
+<h3>2. La formulación de la regla</h3>
+<p>En 1797, el pintor y escritor británico <b>John Thomas Smith</b> publicó <i>Remarks on Rural Scenery</i>. En esta obra explicó una regla de composición basada en dividir la imagen en tercios, aplicada al equilibrio entre elementos de una escena.</p>
+</div>
+<div class="paso">
+<h3>3. Su uso en la fotografía</h3>
+<p>Con el desarrollo de la fotografía, la regla se convirtió en una guía práctica para ubicar sujetos, horizontes y otros elementos dentro del encuadre. Actualmente también se enseña y utiliza en cine, ilustración, diseño y creación de contenido digital.</p>
+</div>
+<div class="nota"><b>Importante:</b> la ley de los tercios no fue el origen de toda composición artística. Es una guía concreta que organiza ideas de equilibrio visual que ya se exploraban en el arte.</div>
+</section>
+
+<section class="seccion" id="usos">
+<h2>¿Para qué se utiliza?</h2>
+<div class="contenedor" style="width:100%;margin:0">
+<article class="card" >
+<h2 >Fotografía de retrato</h2>
+<p>Se puede ubicar uno de los ojos cerca de una intersección superior para dar protagonismo al rostro y dejar espacio hacia donde mira la persona.</p>
+<img src="retratoleytercios.png" alt="" style="height: 200px;width: 200px;margin-left: 50px;">
+</article>
+<article class="card">
+<h2>Paisajes</h2>
+<p>El horizonte puede colocarse sobre la línea horizontal superior o inferior, según se quiera destacar el cielo o el terreno.</p>
+<img src="paisajeleytercios.jfif" alt="" style="height: 200px;width: 200px;margin-left: 50px;">
+</article>
+<article class="card">
+<h2>Cine y video</h2>
+<p>Ayuda a ubicar personajes dentro del plano y a dejar espacio visual en la dirección de su mirada o movimiento.</p>
+<img src="cineleytercios.jpg" alt="" style="height: 200px;width: 200px;margin-left: 50px; margin-top: 20px;">
+</article>
+<article class="card">
+<h2>Diseño e ilustración</h2>
+<p>Permite distribuir personajes, objetos, textos y espacios para guiar la mirada del espectador.</p>
+<img src="posterleytercios.jpg" alt="" style="height: 200px;width: 200px;margin-left: 50px;margin-top: 70px;">
+</article>
+<article class="card">
+<h2>Publicidad y redes sociales</h2>
+<p>Puede ayudar a destacar un producto o una persona y reservar espacio para incorporar un mensaje o llamado a la acción.</p>
+<img src="publicidadtercios.jpg" alt="" style="height: 200px;width: 200px;margin-left: 50px;">
+</article>
+<article class="card">
+<h2>Composición editorial</h2>
+<p>Sirve como referencia para organizar imágenes y elementos gráficos dentro de una página o una pieza visual.</p>
+<img src="composciontercios.jpg" alt="" style="height: 200px;width: 200px;margin-left: 50px;margin-top: 60px;">
+</article>
+</div>
+</section>
+
+<section class="seccion" id="aplicacion">
+<h2>¿Cómo aplicar la ley de los tercios?</h2>
+<div class="paso"><h3>Paso 1. Activa o imagina la cuadrícula</h3><p>Divide mentalmente el encuadre en tres partes iguales, tanto horizontal como verticalmente.</p></div>
+<div class="paso"><h3>Paso 2. Identifica el elemento principal</h3><p>Decide qué quieres que observe primero el espectador: una persona, un objeto, un edificio o un detalle.</p></div>
+<div class="paso"><h3>Paso 3. Ubícalo cerca de una línea o intersección</h3><p>Prueba distintas posiciones. No es necesario que el sujeto toque exactamente el punto; la cuadrícula funciona como referencia.</p></div>
+<div class="paso"><h3>Paso 4. Revisa el espacio restante</h3><p>Observa si queda espacio hacia la dirección de la mirada o movimiento y si el fondo ayuda a comprender la escena.</p></div>
+<div class="ejemplo">
+<p><b>Ejemplo de cuadrícula de tercios</b></p>
+<svg viewBox="0 0 600 340" role="img" aria-label="Paisaje ilustrado con cuadrícula de tercios">
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#7dd3fc"/><stop offset="1" stop-color="#dbeafe"/></linearGradient></defs>
+<rect width="600" height="340" fill="url(#sky)"/><circle cx="455" cy="90" r="38" fill="#fde68a"/>
+<path d="M0 235 L130 105 L260 235 L365 130 L600 250 L600 340 L0 340Z" fill="#64748b"/>
+<path d="M0 265 Q150 225 300 270 T600 255 L600 340 L0 340Z" fill="#22c55e"/>
+<path d="M0 280 Q180 250 340 290 T600 275" fill="none" stroke="#15803d" stroke-width="5"/>
+<g stroke="#fff" stroke-width="3" opacity=".95"><path d="M200 0V340M400 0V340M0 113.3H600M0 226.6H600"/></g>
+<g fill="#fff" stroke="#6c63ff" stroke-width="3"><circle cx="200" cy="113.3" r="7"/><circle cx="400" cy="113.3" r="7"/><circle cx="200" cy="226.6" r="7"/><circle cx="400" cy="226.6" r="7"/></g>
+</svg>
+<p style="font-size:14px;color:#cbd5e1">La cuadrícula es una guía superpuesta al encuadre, no un elemento que deba aparecer en la fotografía final.</p>
+</div>
+<div class="centrado">
+<a class="boton" href="cuestionario-tercios.html">IR AL CUESTIONARIO →</a>
+</div>
+</section>
+<footer>Universidad Politécnica Salesiana · Diseño y composición visual</footer>
+<script>
+function toggleMenu(){document.getElementById("menuHamburguesa").classList.toggle("activo")}
+document.addEventListener("click",function(e){const menu=document.getElementById("menuHamburguesa");const btn=document.querySelector(".menu-btn");if(menu.classList.contains("activo")&&!menu.contains(e.target)&&!btn.contains(e.target))menu.classList.remove("activo")});
+</script>
+</body>
+</html>

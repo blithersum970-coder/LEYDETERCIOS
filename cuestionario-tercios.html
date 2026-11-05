@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuestionario | Ley de los Tercios</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:linear-gradient(135deg,#eef2ff,#f8f9ff);color:#111827;line-height:1.55}
+header{background:#38acff;color:white;text-align:center;padding:48px 20px}
+header h1{color:#ffffff;font-size:clamp(2rem,5vw,3rem);margin-bottom:8px}
+header p{color:#cbd5e1}
+.menu-btn{position:fixed;top:18px;left:18px;background:#1876db;color:white;width:52px;height:52px;border:0;border-radius:14px;font-size:28px;cursor:pointer;z-index:1001}
+.menu-hamburguesa{position:fixed;top:0;left:-270px;width:255px;height:100%;background:white;padding-top:90px;transition:.35s;z-index:1000;box-shadow:5px 0 15px #0002}
+.menu-hamburguesa.activo{left:0}
+.menu-hamburguesa a{display:block;padding:17px 24px;text-decoration:none;color:#333;font-size:18px;font-weight:bold;border-bottom:1px solid #eee}
+.menu-hamburguesa a:hover{background:#f1f1ff;color:#6c63ff}
+main{width:94%;max-width:950px;margin:35px auto}
+.intro,.pregunta{background:white;border:3px solid #d7d7ff;border-radius:18px;padding:22px;margin-bottom:22px;box-shadow:0 5px 15px #0000000c}
+.intro h2{color:#1f2a8e;margin-bottom:8px}
+.pregunta h3{color:#4b42c4;margin-bottom:12px}
+.numero{display:inline-block;background:#101c8e;color:white;padding:5px 11px;border-radius:8px;margin-bottom:10px;font-weight:bold}
+.opciones{display:grid;gap:10px;margin-top:15px}
+.opcion{display:flex;gap:10px;align-items:flex-start;padding:12px;border:2px solid #e0e7ff;border-radius:10px;cursor:pointer}
+.opcion:hover{background:#f5f3ff;border-color:#a5a0ff}
+.opcion input{margin-top:5px;accent-color:#6c63ff}
+svg.ilustracion{width:100%;max-height:300px;display:block;border-radius:12px;background:#e0f2fe;margin:12px 0}
+.leyenda{font-size:13px;color:#64748b;margin-top:5px}
+.feedback{display:none;margin-top:14px;padding:14px;border-radius:10px}
+.feedback.correcto{display:block;background:#dcfce7;border-left:6px solid #16a34a;color:#14532d}
+.feedback.incorrecto{display:block;background:#fee2e2;border-left:6px solid #dc2626;color:#7f1d1d}
+.boton{background:#2563eb;color:white;border:0;padding:13px 22px;border-radius:10px;cursor:pointer;font-weight:bold;font-size:16px}
+.boton:hover{background:#1d4ed8}
+.boton.secundario{background:#475569}
+.acciones{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:28px 0}
+#resultado{display:none;text-align:center;background:#111827;color:white;padding:25px;border-radius:16px;margin:25px 0}
+#resultado h2{color:#a5b4fc;margin-bottom:8px}
+footer{background:#0f172a;color:#cbd5e1;text-align:center;padding:26px;margin-top:40px}
+@media(max-width:600px){main{width:92%}.pregunta,.intro{padding:16px}}
+</style>
+</head>
+<body>
+<button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+<nav id="menuHamburguesa" class="menu-hamburguesa">
+<a href="ley-tercios.html">Inicio / teoría</a>
+<a href="#preguntas">Cuestionario</a>
+</nav>
+<header>
+<h1>CUESTIONARIO: LEY DE LOS TERCIOS</h1>
+<p>Comprueba lo que aprendiste sobre composición visual.</p>
+</header>
+<main>
+<section class="intro">
+<h2>Instrucciones</h2>
+<p>Responde las cinco preguntas. Las preguntas 3, 4 y 5 incluyen una imagen: observa la posición del sujeto y la cuadrícula para decidir si la composición aplica la ley de los tercios. Al finalizar, pulsa <b>Comprobar respuestas</b> para ver tu puntuación y la explicación de cada respuesta.</p>
+</section>
+<form id="quiz">
+<div id="preguntas">
+<section class="pregunta" data-correct="b" data-explanation="La cuadrícula divide el encuadre en tres columnas y tres filas iguales. Sus cuatro intersecciones sirven como puntos de interés para ubicar elementos importantes.">
+<span class="numero">Pregunta 1</span><h3>¿En cuántas secciones iguales se divide la imagen al aplicar la ley de los tercios?</h3>
+<div class="opciones">
+<label class="opcion"><input type="radio" name="q1" value="a"> Cuatro secciones.</label>
+<label class="opcion"><input type="radio" name="q1" value="b"> Nueve secciones.</label>
+<label class="opcion"><input type="radio" name="q1" value="c"> Seis secciones.</label>
+<label class="opcion"><input type="radio" name="q1" value="d"> Doce secciones.</label>
+</div><div class="feedback" aria-live="polite"></div>
+</section>
+<section class="pregunta" data-correct="c" data-explanation="John Thomas Smith explicó esta regla en su libro Remarks on Rural Scenery, publicado en 1797. Su formulación se relacionaba con la distribución y el equilibrio de los elementos de una escena.">
+<span class="numero">Pregunta 2</span><h3>¿Quién publicó una explicación de la regla de los tercios en 1797?</h3>
+<div class="opciones">
+<label class="opcion"><input type="radio" name="q2" value="a"> Leonardo da Vinci.</label>
+<label class="opcion"><input type="radio" name="q2" value="b"> Ansel Adams.</label>
+<label class="opcion"><input type="radio" name="q2" value="c"> John Thomas Smith.</label>
+<label class="opcion"><input type="radio" name="q2" value="d"> Louis Daguerre.</label>
+</div><div class="feedback" aria-live="polite"></div>
+</section>
+
+<section class="pregunta" data-correct="a" data-explanation="Sí está bien aplicada: el sujeto principal aparece cerca de una intersección de la cuadrícula, en lugar de quedar obligatoriamente en el centro. La ubicación deja espacio hacia el lado opuesto y crea una composición más dinámica.">
+<span class="numero">Pregunta 3 · Observa la imagen</span><h3>¿La composición aplica correctamente la ley de los tercios?</h3>
+<svg class="ilustracion" viewBox="0 0 600 300" role="img" aria-label="Ilustración de una persona ubicada en el tercio izquierdo con cuadrícula de tercios">
+<defs><linearGradient id="fondoA" x2="0" y2="1"><stop stop-color="#bae6fd"/><stop offset="1" stop-color="#fef3c7"/></linearGradient></defs>
+<rect width="600" height="300" fill="url(#fondoA)"/><circle cx="500" cy="65" r="32" fill="#fbbf24"/><path d="M0 225 Q150 190 300 225 T600 220V300H0Z" fill="#86b98b"/>
+<!-- Persona cerca de intersección izquierda -->
+<circle cx="198" cy="112" r="25" fill="#92400e"/><path d="M174 145 Q198 128 222 145 L238 225 H158Z" fill="#7c3aed"/><path d="M177 220L165 285M219 220L232 285" stroke="#334155" stroke-width="15" stroke-linecap="round"/>
+<g stroke="#ffffff" stroke-width="3" opacity=".95"><path d="M200 0V300M400 0V300M0 100H600M0 200H600"/></g>
+<g fill="none" stroke="#16a34a" stroke-width="4"><circle cx="200" cy="100" r="9"/></g>
+</svg><p class="leyenda">Imagen 1: sujeto ubicado cerca de una intersección izquierda.</p>
+<div class="opciones">
+<label class="opcion"><input type="radio" name="q3" value="a"> Sí, está bien aplicada.</label>
+<label class="opcion"><input type="radio" name="q3" value="b"> No, está mal aplicada.</label>
+</div><div class="feedback" aria-live="polite"></div>
+</section>
+
+<section class="pregunta" data-correct="b" data-explanation="No está bien aplicada de acuerdo con la guía de los tercios: el sujeto está colocado justo en el centro del encuadre y no cerca de una de las líneas o intersecciones. Una composición centrada puede funcionar por otras razones, pero esta imagen no demuestra la ubicación típica de la ley de los tercios.">
+<span class="numero">Pregunta 4 · Observa la imagen</span><h3>¿La composición aplica correctamente la ley de los tercios?</h3>
+<svg class="ilustracion" viewBox="0 0 600 300" role="img" aria-label="Ilustración de una persona centrada en el encuadre con cuadrícula de tercios">
+<rect width="600" height="300" fill="#c7e9fa"/><path d="M0 225 Q300 190 600 225V300H0Z" fill="#86b98b"/><circle cx="300" cy="95" r="28" fill="#92400e"/><path d="M270 130 Q300 115 330 130 L350 225H250Z" fill="#ea580c"/><path d="M270 220L255 285M330 220L345 285" stroke="#334155" stroke-width="16" stroke-linecap="round"/>
+<g stroke="#ffffff" stroke-width="3" opacity=".95"><path d="M200 0V300M400 0V300M0 100H600M0 200H600"/></g>
+<circle cx="300" cy="150" r="10" fill="none" stroke="#dc2626" stroke-width="4"/>
+</svg><p class="leyenda">Imagen 2: sujeto ubicado en el centro exacto del encuadre.</p>
+<div class="opciones">
+<label class="opcion"><input type="radio" name="q4" value="a"> Sí, está bien aplicada.</label>
+<label class="opcion"><input type="radio" name="q4" value="b"> No, está mal aplicada.</label>
+</div><div class="feedback" aria-live="polite"></div>
+</section>
+
+<section class="pregunta" data-correct="a" data-explanation="Sí está bien aplicada: el horizonte coincide aproximadamente con la línea horizontal inferior, por lo que el cielo ocupa dos tercios de la imagen. Esta decisión da mayor protagonismo al cielo y mantiene el paisaje en el tercio inferior.">
+<span class="numero">Pregunta 5 · Observa la imagen</span><h3>¿La composición del paisaje aplica correctamente la ley de los tercios?</h3>
+<svg class="ilustracion" viewBox="0 0 600 300" role="img" aria-label="Paisaje con horizonte colocado en la línea horizontal inferior de la cuadrícula">
+<defs><linearGradient id="fondoC" x2="0" y2="1"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient></defs>
+<rect width="600" height="300" fill="url(#fondoC)"/><circle cx="450" cy="70" r="34" fill="#fde68a"/><path d="M0 198 L105 145 L205 190 L330 130 L430 190 L520 150 L600 180V300H0Z" fill="#64748b"/><path d="M0 200H600V300H0Z" fill="#22c55e"/><path d="M0 218 Q130 205 260 225 T600 210" stroke="#0f766e" stroke-width="8" fill="none"/>
+<g stroke="#ffffff" stroke-width="3" opacity=".95"><path d="M200 0V300M400 0V300M0 100H600M0 200H600"/></g>
+<circle cx="300" cy="200" r="8" fill="none" stroke="#16a34a" stroke-width="4"/>
+</svg><p class="leyenda">Imagen 3: el horizonte coincide con la línea horizontal inferior.</p>
+<div class="opciones">
+<label class="opcion"><input type="radio" name="q5" value="a"> Sí, está bien aplicada.</label>
+<label class="opcion"><input type="radio" name="q5" value="b"> No, está mal aplicada.</label>
+</div><div class="feedback" aria-live="polite"></div>
+</section>
+</div>
+<div class="acciones">
+<button class="boton" type="button" onclick="comprobar()">Comprobar respuestas</button>
+<button class="boton secundario" type="button" onclick="reiniciar()">Volver a intentar</button>
+<a class="boton secundario" href="ley-tercios.html" style="text-decoration:none">Volver a la teoría</a>
+</div>
+</form>
+<section id="resultado" aria-live="polite"><h2>Resultado del cuestionario</h2><p id="puntaje"></p><p id="mensaje"></p></section>
+</main>
+<footer>Universidad Politécnica Salesiana · Cuestionario de composición visual</footer>
+<script>
+function toggleMenu(){document.getElementById("menuHamburguesa").classList.toggle("activo")}
+function comprobar(){
+ const preguntas=[...document.querySelectorAll(".pregunta")];
+ let aciertos=0, respondidas=0;
+ preguntas.forEach((p)=>{
+   const elegida=p.querySelector("input:checked");
+   const feedback=p.querySelector(".feedback");
+   const correcta=p.dataset.correct;
+   feedback.className="feedback";
+   if(!elegida){feedback.textContent="No seleccionaste una respuesta. "+p.dataset.explanation;feedback.classList.add("incorrecto");return}
+   respondidas++;
+   if(elegida.value===correcta){aciertos++;feedback.textContent="¡Correcto! "+p.dataset.explanation;feedback.classList.add("correcto")}
+   else{feedback.textContent="Respuesta incorrecta. "+p.dataset.explanation;feedback.classList.add("incorrecto")}
+ });
+ const resultado=document.getElementById("resultado");
+ resultado.style.display="block";
+ document.getElementById("puntaje").textContent=`Obtuviste ${aciertos} de 5 respuestas correctas.`;
+ document.getElementById("mensaje").textContent=respondidas<5?"Respondiste "+respondidas+" de 5 preguntas. Revisa las que faltan y vuelve a intentarlo.":aciertos===5?"¡Excelente! Dominas los fundamentos de la ley de los tercios.":aciertos>=3?"¡Buen trabajo! Revisa las explicaciones para reforzar lo aprendido.":"Sigue practicando. Repasa la teoría y vuelve a intentarlo.";
+ resultado.scrollIntoView({behavior:"smooth",block:"center"});
+}
+function reiniciar(){
+ document.getElementById("quiz").reset();
+ document.querySelectorAll(".feedback").forEach(f=>{f.textContent="";f.className="feedback"});
+ document.getElementById("resultado").style.display="none";
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+document.addEventListener("click",function(e){const menu=document.getElementById("menuHamburguesa");const btn=document.querySelector(".menu-btn");if(menu.classList.contains("activo")&&!menu.contains(e.target)&&!btn.contains(e.target))menu.classList.remove("activo")});
+</script>
+</body>
+</html>
